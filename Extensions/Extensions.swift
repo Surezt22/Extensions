@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK - Array extensions
 
@@ -49,7 +50,11 @@ extension Array {
         }
         return reverseArray
     }
-
+    
+//    func convertInArray() -> Array<Any> {
+//        return self.characters.map { String($0) }
+//    }
+    
 }
 
 //MARK - STRING extensions
@@ -82,6 +87,17 @@ extension String {
         }
         return isPalindrome
     }
+    
+    //pass the width of the view and the font used on it, perfect for layout cells height and textviews.
+    func estimatedSizeBasedOn(width: CGFloat, and font: UIFont) -> CGSize {
+        
+        let size = CGSize(width: width, height: 1000)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let estimatedFrame = NSString(string: self).boundingRect(with: size, options: options, attributes: [NSFontAttributeName: font], context: nil)
+        return CGSize(width: width, height: estimatedFrame.height + 20)
+    }
+    
+    
 }
 
 //MARK: - Date Extensions

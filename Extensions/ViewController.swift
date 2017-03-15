@@ -13,7 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        let numberArrays = Array(1...10).map{String($0)}
+//        print(numberArrays)
         
+      
+
     }
 
     override func didReceiveMemoryWarning() {
